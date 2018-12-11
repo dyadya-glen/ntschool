@@ -118,12 +118,11 @@
 
                                 <p>{{ $post->content }}</p>
 
-                                {{--@foreach($post->categories as $category)--}}
-                                {{--@foreach($post)--}}
-                                    {{--<span class="entry-date highlight3 small-text">--}}
-                                    {{--{{ $category->title }}--}}
-                                    {{--</span>--}}
-                                {{--@endforeach--}}
+                                @foreach($post->categories as $category)
+                                    <span class="entry-date highlight3 small-text">
+                                    {{ $category->title }}
+                                    </span>
+                                @endforeach
 
                             </div>
                             <!-- .item-content.entry-content -->
