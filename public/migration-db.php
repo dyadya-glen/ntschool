@@ -53,10 +53,10 @@ require_once '../config/database.php';
 
 
 //Manager::schema()->create('category_post', function ($table) {
-//    $table->unsignedInteger('posts_id');
+//    $table->unsignedInteger('post_id');
 //    $table->unsignedInteger('category_id');
 //    $table->timestamps();
-//    $table->primary(['posts_id', 'category_id']);
+//    $table->primary(['post_id', 'category_id']);
 //});
 
 //**************************************//
