@@ -4,7 +4,7 @@
         <div class="apsc-icons-wrapper clearfix apsc-theme-4">
         @forelse($categories as $category)
             <div class="apsc-each-profile">
-                <a class="apsc-facebook-icon clearfix" href="#">
+                <a class="apsc-facebook-icon clearfix" href="/blog/{{ $category->key }}">
                     <div class="apsc-inner-block">
                         <span class="social-icon">
                             <span class="media-name">{{ $category->title }}</span>

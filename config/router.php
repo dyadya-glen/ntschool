@@ -16,7 +16,7 @@ $router->get('services', '/services', \NtSchool\Action\ServicesAction::class);
 $router->get('service', '/service-single', \NtSchool\Action\ServiceSingleAction::class);
 $router->get('faq', '/faq', \NtSchool\Action\FaqAction::class);
 $router->get('404', '/404', \NtSchool\Action\Action404::class);
-$router->get('blog', '/blog', \NtSchool\Action\BlogAction::class);
+$router->get('blog', '/blog{/category}', \NtSchool\Action\BlogAction::class);
 $router->get('post', '/blog-single', \NtSchool\Action\PostAction::class);
 $router->get('video post', '/blog-single-video', \NtSchool\Action\VideoPostAction::class);
 $router->get('contact', '/contact', \NtSchool\Action\ContactAction::class);
