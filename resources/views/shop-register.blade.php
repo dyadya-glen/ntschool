@@ -3,7 +3,7 @@
 @section('title', $title)
 
 @push('style')
-<link rel="stylesheet" href="css/shop.css" class="color-switcher-link">
+<link rel="stylesheet" href="/css/shop.css" class="color-switcher-link">
 @endpush
 
 @section('content')
