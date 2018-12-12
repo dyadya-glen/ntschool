@@ -30,21 +30,22 @@
     <![endif]-->
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{--<base href="/">--}}
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/main.css" class="color-switcher-link">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/main.css" class="color-switcher-link">
     @stack('style')
 
-    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
 
     <!--[if lt IE 9]>
-    <script src="js/vendor/html5shiv.min.js"></script>
-    <script src="js/vendor/respond.min.js"></script>
-    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/js/vendor/html5shiv.min.js"></script>
+    <script src="/js/vendor/respond.min.js"></script>
+    <script src="/js/vendor/jquery-1.12.4.min.js"></script>
     <![endif]-->
 
 </head>
@@ -375,49 +376,49 @@
                                                     </ul>
                                                 </li>
                                                 <li class="mega-menu-col">
-                                                    <a href="footer1.html">Footers</a>
+                                                    <a href="/footer1.html">Footers</a>
                                                     <ul>
                                                         <li>
-                                                            <a href="footer1.html">Footer Type 1</a>
+                                                            <a href="/footer1.html">Footer Type 1</a>
                                                         </li>
                                                         <li>
-                                                            <a href="footer2.html">Footer Type 2</a>
+                                                            <a href="/footer2.html">Footer Type 2</a>
                                                         </li>
                                                         <li>
-                                                            <a href="footer3.html">Footer Type 3</a>
+                                                            <a href="/footer3.html">Footer Type 3</a>
                                                         </li>
                                                         <li>
-                                                            <a href="footer4.html">Footer Type 4</a>
+                                                            <a href="/footer4.html">Footer Type 4</a>
                                                         </li>
                                                         <li>
-                                                            <a href="footer5.html">Footer Type 5</a>
+                                                            <a href="/footer5.html">Footer Type 5</a>
                                                         </li>
                                                         <li>
-                                                            <a href="footer6.html">Footer Type 6</a>
+                                                            <a href="/footer6.html">Footer Type 6</a>
                                                         </li>
                                                         <li>
-                                                            <a href="footer7.html">Footer Type 7</a>
+                                                            <a href="/footer7.html">Footer Type 7</a>
                                                         </li>
                                                     </ul>
                                                 </li>
                                                 <li class="mega-menu-col">
-                                                    <a href="copyright1.html">Copyrights</a>
+                                                    <a href="/copyright1.html">Copyrights</a>
 
                                                     <ul>
                                                         <li>
-                                                            <a href="copyright1.html">Copyrights 1</a>
+                                                            <a href="/copyright1.html">Copyrights 1</a>
                                                         </li>
                                                         <li>
-                                                            <a href="copyright2.html">Copyrights 2</a>
+                                                            <a href="/copyright2.html">Copyrights 2</a>
                                                         </li>
                                                         <li>
-                                                            <a href="copyright3.html">Copyrights 3</a>
+                                                            <a href="/copyright3.html">Copyrights 3</a>
                                                         </li>
                                                         <li>
-                                                            <a href="copyright4.html">Copyrights 4</a>
+                                                            <a href="/copyright4.html">Copyrights 4</a>
                                                         </li>
                                                         <li>
-                                                            <a href="copyright5.html">Copyrights 5</a>
+                                                            <a href="/copyright5.html">Copyrights 5</a>
                                                         </li>
                                                     </ul>
                                                 </li>
@@ -431,20 +432,20 @@
 
                                     <!-- gallery -->
                                     <li>
-                                        <a href="gallery-regular.html">Gallery</a>
+                                        <a href="/gallery-regular.html">Gallery</a>
                                         <ul>
                                             <!-- Gallery regular -->
                                             <li>
-                                                <a href="gallery-regular.html">Gallery Regular</a>
+                                                <a href="/gallery-regular.html">Gallery Regular</a>
                                                 <ul>
                                                     <li>
-                                                        <a href="gallery-regular.html">1 column</a>
+                                                        <a href="/gallery-regular.html">1 column</a>
                                                     </li>
                                                     <li>
-                                                        <a href="gallery-regular-2-cols.html">2 columns</a>
+                                                        <a href="/gallery-regular-2-cols.html">2 columns</a>
                                                     </li>
                                                     <li>
-                                                        <a href="gallery-regular-3-cols.html">3 columns</a>
+                                                        <a href="/gallery-regular-3-cols.html">3 columns</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -452,16 +453,16 @@
 
                                             <!-- Gallery full width -->
                                             <li>
-                                                <a href="gallery-fullwidth.html">Gallery Full Width</a>
+                                                <a href="/gallery-fullwidth.html">Gallery Full Width</a>
                                                 <ul>
                                                     <li>
-                                                        <a href="gallery-fullwidth.html">2 column</a>
+                                                        <a href="/gallery-fullwidth.html">2 column</a>
                                                     </li>
                                                     <li>
-                                                        <a href="gallery-fullwidth-3-cols.html">3 columns</a>
+                                                        <a href="/gallery-fullwidth-3-cols.html">3 columns</a>
                                                     </li>
                                                     <li>
-                                                        <a href="gallery-fullwidth-4-cols.html">4 columns</a>
+                                                        <a href="/gallery-fullwidth-4-cols.html">4 columns</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -469,16 +470,16 @@
 
                                             <!-- Gallery extended -->
                                             <li>
-                                                <a href="gallery-extended.html">Gallery Extended</a>
+                                                <a href="/gallery-extended.html">Gallery Extended</a>
                                                 <ul>
                                                     <li>
-                                                        <a href="gallery-extended.html">1 column</a>
+                                                        <a href="/gallery-extended.html">1 column</a>
                                                     </li>
                                                     <li>
-                                                        <a href="gallery-extended-2-cols.html">2 columns</a>
+                                                        <a href="/gallery-extended-2-cols.html">2 columns</a>
                                                     </li>
                                                     <li>
-                                                        <a href="gallery-extended-3-cols.html">3 columns</a>
+                                                        <a href="/gallery-extended-3-cols.html">3 columns</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -486,16 +487,16 @@
 
                                             <!-- Gallery carousel -->
                                             <li>
-                                                <a href="gallery-carousel.html">Gallery Carousel</a>
+                                                <a href="/gallery-carousel.html">Gallery Carousel</a>
                                                 <ul>
                                                     <li>
-                                                        <a href="gallery-carousel.html">1 column</a>
+                                                        <a href="/gallery-carousel.html">1 column</a>
                                                     </li>
                                                     <li>
-                                                        <a href="gallery-carousel-2-cols.html">2 columns</a>
+                                                        <a href="/gallery-carousel-2-cols.html">2 columns</a>
                                                     </li>
                                                     <li>
-                                                        <a href="gallery-carousel-3-cols.html">3 columns</a>
+                                                        <a href="/gallery-carousel-3-cols.html">3 columns</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -503,19 +504,19 @@
 
                                             <!-- Gallery tile -->
                                             <li>
-                                                <a href="gallery-tile.html">Gallery Tile</a>
+                                                <a href="/gallery-tile.html">Gallery Tile</a>
                                             </li>
                                             <!-- eof Gallery tile -->
 
                                             <!-- Gallery left sidebar -->
                                             <li>
-                                                <a href="gallery-left.html">Gallery Left Sidebar</a>
+                                                <a href="/gallery-left.html">Gallery Left Sidebar</a>
                                                 <ul>
                                                     <li>
-                                                        <a href="gallery-left.html">1 column</a>
+                                                        <a href="/gallery-left.html">1 column</a>
                                                     </li>
                                                     <li>
-                                                        <a href="gallery-left-2-cols.html">2 columns</a>
+                                                        <a href="/gallery-left-2-cols.html">2 columns</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -523,13 +524,13 @@
 
                                             <!-- Gallery right sidebar -->
                                             <li>
-                                                <a href="gallery-right.html">Gallery Right Sidebar</a>
+                                                <a href="/gallery-right.html">Gallery Right Sidebar</a>
                                                 <ul>
                                                     <li>
-                                                        <a href="gallery-right.html">1 column</a>
+                                                        <a href="/gallery-right.html">1 column</a>
                                                     </li>
                                                     <li>
-                                                        <a href="gallery-right-2-cols.html">2 columns</a>
+                                                        <a href="/gallery-right-2-cols.html">2 columns</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -537,16 +538,16 @@
 
                                             <!-- Gallery item -->
                                             <li>
-                                                <a href="gallery-single.html">Gallery Item</a>
+                                                <a href="/gallery-single.html">Gallery Item</a>
                                                 <ul>
                                                     <li>
-                                                        <a href="gallery-single.html">Style 1</a>
+                                                        <a href="/gallery-single.html">Style 1</a>
                                                     </li>
                                                     <li>
-                                                        <a href="gallery-single2.html">Style 2</a>
+                                                        <a href="/gallery-single2.html">Style 2</a>
                                                     </li>
                                                     <li>
-                                                        <a href="gallery-single3.html">Style 3</a>
+                                                        <a href="/gallery-single3.html">Style 3</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -557,7 +558,7 @@
 
                                     <!-- blog -->
                                     <li>
-                                        <a href="blog">Blog</a>
+                                        <a href="/blog">Blog</a>
                                         <ul>
 
                                             {{--<li>--}}
@@ -574,7 +575,7 @@
                                             {{--</li>--}}
 
                                             <li>
-                                                <a href="blog-single">Post</a>
+                                                <a href="/blog-single">Post</a>
                                                 {{--<ul>--}}
                                                     {{--<li>--}}
                                                         {{--<a href="blog-single-right.html">Right Sidebar</a>--}}
@@ -589,7 +590,7 @@
                                             </li>
 
                                             <li>
-                                                <a href="blog-single-video">Video Post</a>
+                                                <a href="/blog-single-video">Video Post</a>
                                                 {{--<ul>--}}
                                                     {{--<li>--}}
                                                         {{--<a href="blog-single-video-right.html">Right Sidebar</a>--}}
@@ -609,7 +610,7 @@
 
                                     <!-- contacts -->
                                     <li>
-                                        <a href="contact">Contact</a>
+                                        <a href="/contact">Contact</a>
                                         {{--<ul>--}}
                                             {{--<li>--}}
                                                 {{--<a href="contact.html">Contact 1</a>--}}
@@ -792,8 +793,8 @@
 </div>
 <!-- eof #canvas -->
 @stack('script')
-<script src="js/compressed.js"></script>
-<script src="js/main.js"></script>
+<script src="/js/compressed.js"></script>
+<script src="/js/main.js"></script>
 
 
 </body>
