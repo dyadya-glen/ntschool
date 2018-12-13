@@ -13,6 +13,8 @@
         "guzzlehttp/psr7": "^1.5",
         "aura/di": "^3.4",
         "vlucas/phpdotenv": "^2.5",
-        "illuminate/pagination": "^5.7"
+        "illuminate/pagination": "^5.7",
+        "monolog/monolog": "^1.24",
+        "zendframework/zend-log": "^2.10"
     }
 }
