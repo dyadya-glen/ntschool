@@ -12,26 +12,13 @@ $container = $builder->newInstance();
 $container->set('logger', function () {
     $log = new Logger('name');
     $log->pushHandler(new StreamHandler(__DIR__ . '/../resources/logs/main.log'));
-    $logger = new \NtSchool\MonologLogger($log);
-
+    $logger = new \Ntschool\Notifier\Adapter\MonologNotifierAdapter($log);
     return $logger;
 });
-
-//$container->set('logger', function () {
-//    $log = new Zend\Log\Logger;
-//    $log->addWriter('stream', null, ['stream' => __DIR__ . '/../resources/logs/main.log']);
-//    $logger = new \NtSchool\ZendLogger($log);
-//
-//    return $logger;
-//});
 
 $container->set(\NtSchool\Action\HomeAction::class, function () use ($renderer, $container) {
     return new \NtSchool\Action\HomeAction($renderer, $container->get('logger'));
 });
-
-//$container->set(\NtSchool\Action\HomeAction::class, function () use ($renderer) {
-//    return new \NtSchool\Action\HomeAction($renderer);
-//});
 
 $container->set(\NtSchool\Action\ListOfGoodsAction::class, function () use ($renderer) {
     return new \NtSchool\Action\ListOfGoodsAction($renderer);

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5f5f7ba0d0875e81e3874b74654c4a6a",
+    "content-hash": "84b6cb4cf838aae46f183cf210961e47",
     "packages": [
         {
             "name": "aura/di",
@@ -205,6 +205,39 @@
                 "string"
             ],
             "time": "2018-01-09T20:05:19+00:00"
+        },
+        {
+            "name": "dyadyaglen/notifier",
+            "version": "v0.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dyadya-glen/notifier.git",
+                "reference": "2b37ecbad2da36766ee171cd29d3781eca22b02e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dyadya-glen/notifier/zipball/2b37ecbad2da36766ee171cd29d3781eca22b02e",
+                "reference": "2b37ecbad2da36766ee171cd29d3781eca22b02e",
+                "shasum": ""
+            },
+            "require": {
+                "monolog/monolog": "^1.24"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ntschool\\Notifier\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Roman Gulyaev",
+                    "email": "glen2001@yandex.ru"
+                }
+            ],
+            "description": "Simple notifier",
+            "time": "2018-12-15T18:16:02+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
