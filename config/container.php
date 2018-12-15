@@ -10,10 +10,10 @@ $builder = new ContainerBuilder();
 $container = $builder->newInstance();
 
 $container->set('logger', function () {
-    $log = new Logger('name');
-    $log->pushHandler(new StreamHandler(__DIR__ . '/../resources/logs/main.log'));
-    $logger = new \Ntschool\Notifier\Adapter\MonologNotifierAdapter($log);
-    return $logger;
+    $logger = new Logger('name');
+    $logger->pushHandler(new StreamHandler(__DIR__ . '/../resources/logs/main.log'));
+    $notifier = new \Ntschool\Notifier\Adapter\MonologNotifierAdapter($logger);
+    return $notifier;
 });
 
 $container->set(\NtSchool\Action\HomeAction::class, function () use ($renderer, $container) {

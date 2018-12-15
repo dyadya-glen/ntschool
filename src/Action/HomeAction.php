@@ -10,17 +10,17 @@ final class HomeAction
 {
     /** @var \Illuminate\View\Factory */
     protected $renderer;
-    protected $logger;
+    protected $notifier;
 
-    public function __construct($view, NotifierAdapterInterface $logger)
+    public function __construct($view, NotifierAdapterInterface $notifier)
     {
         $this->renderer = $view;
-        $this->logger = $logger;
+        $this->notifier = $notifier;
     }
 
     public function __invoke(ServerRequestInterface $request)
     {
-        $this->logger->error('Message new Adapter method error');
+        $this->notifier->emergency('Message new Adapter method error');
         return $this->renderer->make('index', [
             'title' => 'Pet Salon'
         ]);
