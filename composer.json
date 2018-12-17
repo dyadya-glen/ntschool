@@ -16,6 +16,6 @@
         "illuminate/pagination": "^5.7",
         "monolog/monolog": "^1.24",
         "zendframework/zend-log": "^2.10",
-        "dyadyaglen/notifier": "^0.11.0"
+        "dyadyaglen/notifier": "^1.1.0"
     }
 }

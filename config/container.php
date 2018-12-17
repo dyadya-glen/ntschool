@@ -9,15 +9,31 @@ use Monolog\Handler\StreamHandler;
 $builder = new ContainerBuilder();
 $container = $builder->newInstance();
 
-$container->set('logger', function () {
+$container->set('file-logger', function () {
     $logger = new Logger('name');
     $logger->pushHandler(new StreamHandler(__DIR__ . '/../resources/logs/main.log'));
     $notifier = new \Ntschool\Notifier\Adapter\MonologNotifierAdapter($logger);
     return $notifier;
 });
 
+$container->set('telegram-logger', function () {
+    $notifier = new \Ntschool\Notifier\Adapter\TelegramNotifierAdapter(
+        '742482006:AAEHNdvrrA1f1CbHbfJRglrXYdTfGZWbQPM',
+        '315264334'
+    );
+    return $notifier;
+});
+
+$container->set('notifier', function () use ($container) {
+    $notifier = new \Ntschool\Notifier\NotifierObserver();
+    $notifier->add($container->get('file-logger'));
+    $notifier->add($container->get('telegram-logger'));
+    return $notifier;
+});
+
+
 $container->set(\NtSchool\Action\HomeAction::class, function () use ($renderer, $container) {
-    return new \NtSchool\Action\HomeAction($renderer, $container->get('logger'));
+    return new \NtSchool\Action\HomeAction($renderer, $container->get('notifier'));
 });
 
 $container->set(\NtSchool\Action\ListOfGoodsAction::class, function () use ($renderer) {

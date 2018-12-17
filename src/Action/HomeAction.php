@@ -4,6 +4,7 @@ namespace NtSchool\Action;
 
 use NtSchool\LoggerInterface;
 use Ntschool\Notifier\NotifierAdapterInterface;
+use Ntschool\Notifier\NotifierObserverInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
 final class HomeAction
@@ -12,7 +13,7 @@ final class HomeAction
     protected $renderer;
     protected $notifier;
 
-    public function __construct($view, NotifierAdapterInterface $notifier)
+    public function __construct($view, NotifierObserverInterface $notifier)
     {
         $this->renderer = $view;
         $this->notifier = $notifier;
@@ -20,7 +21,7 @@ final class HomeAction
 
     public function __invoke(ServerRequestInterface $request)
     {
-        $this->notifier->emergency('Message new Adapter method error');
+        $this->notifier->emergency('Observer !');
         return $this->renderer->make('index', [
             'title' => 'Pet Salon'
         ]);
