@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a799426a6bf06cae7ba8c1bb49301ef5",
+    "content-hash": "534aa85fd1a648b6a6381c3da89366f0",
     "packages": [
         {
             "name": "aura/di",
@@ -208,16 +208,16 @@
         },
         {
             "name": "dyadyaglen/notifier",
-            "version": "v0.21",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dyadya-glen/notifier.git",
-                "reference": "a5342663631c80ffcdb135106100a52ea4131f1b"
+                "reference": "e1f6e5aaac8beef0f7eee04e385735c52764fbcd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dyadya-glen/notifier/zipball/a5342663631c80ffcdb135106100a52ea4131f1b",
-                "reference": "a5342663631c80ffcdb135106100a52ea4131f1b",
+                "url": "https://api.github.com/repos/dyadya-glen/notifier/zipball/e1f6e5aaac8beef0f7eee04e385735c52764fbcd",
+                "reference": "e1f6e5aaac8beef0f7eee04e385735c52764fbcd",
                 "shasum": ""
             },
             "require": {
@@ -237,7 +237,7 @@
                 }
             ],
             "description": "Simple notifier",
-            "time": "2018-12-16T20:12:37+00:00"
+            "time": "2018-12-17T07:35:39+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
