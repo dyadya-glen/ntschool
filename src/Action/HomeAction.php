@@ -21,7 +21,7 @@ final class HomeAction
 
     public function __invoke(ServerRequestInterface $request)
     {
-        $this->notifier->emergency('Observer !');
+        //$this->notifier->emergency('Observer !');
         return $this->renderer->make('index', [
             'title' => 'Pet Salon'
         ]);
