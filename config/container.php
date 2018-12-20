@@ -9,20 +9,35 @@ use Monolog\Handler\StreamHandler;
 $builder = new ContainerBuilder();
 $container = $builder->newInstance();
 
-$container->set('file-logger', function () {
-    $logger = new Logger('name');
-    $logger->pushHandler(new StreamHandler(__DIR__ . '/../resources/logs/main.log'));
-    $notifier = new \Ntschool\Notifier\Adapter\MonologNotifierAdapter($logger);
-    return $notifier;
+$container->set('validator', function () use ($capsule) {
+    $filesystem = new \Illuminate\Filesystem\Filesystem();
+    $loader = new \Illuminate\Translation\FileLoader($filesystem, dirname(dirname(__FILE__)) . '/resources/lang');
+    $loader->addNamespace('lang', dirname(dirname(__FILE__)) . '/resources/lang');
+    $loader->load($lang = 'ru', $group = 'validation', $namespace = 'lang');
+
+    $factory = new \Illuminate\Translation\Translator($loader, 'ru');
+    $validator = new \Illuminate\Validation\Factory($factory);
+
+    $databasePresenceVerifier = new \Illuminate\Validation\DatabasePresenceVerifier($capsule->getDatabaseManager());
+    $validator->setPresenceVerifier($databasePresenceVerifier);
+
+    return $validator;
 });
 
-$container->set('telegram-logger', function () {
-    $notifier = new \Ntschool\Notifier\Adapter\TelegramNotifierAdapter(
-        '742482006:AAEHNdvrrA1f1CbHbfJRglrXYdTfGZWbQPM',
-        '315264334'
-    );
-    return $notifier;
-});
+//$container->set('file-logger', function () {
+//    $logger = new Logger('name');
+//    $logger->pushHandler(new StreamHandler(__DIR__ . '/../resources/logs/main.log'));
+//    $notifier = new \Ntschool\Notifier\Adapter\MonologNotifierAdapter($logger);
+//    return $notifier;
+//});
+//
+//$container->set('telegram-logger', function () {
+//    $notifier = new \Ntschool\Notifier\Adapter\TelegramNotifierAdapter(
+//        '742482006:AAEHNdvrrA1f1CbHbfJRglrXYdTfGZWbQPM',
+//        '315264334'
+//    );
+//    return $notifier;
+//});
 
 $container->set('notifier', function () use ($container) {
     $notifier = new \Ntschool\Notifier\NotifierObserver();
