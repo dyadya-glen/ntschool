@@ -118,7 +118,7 @@
                                                 <a href="index_singlepage.html">Single Page</a>
                                             </li>
                                             <li>
-                                                <a href="admin_index.html">Admin Dashboard</a>
+                                                <a href="administrator">Admin Dashboard</a>
                                             </li>
                                         </ul>
                                     </li>

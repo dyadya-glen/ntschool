@@ -24,20 +24,20 @@ $container->set('validator', function () use ($capsule) {
     return $validator;
 });
 
-//$container->set('file-logger', function () {
-//    $logger = new Logger('name');
-//    $logger->pushHandler(new StreamHandler(__DIR__ . '/../resources/logs/main.log'));
-//    $notifier = new \Ntschool\Notifier\Adapter\MonologNotifierAdapter($logger);
-//    return $notifier;
-//});
-//
-//$container->set('telegram-logger', function () {
-//    $notifier = new \Ntschool\Notifier\Adapter\TelegramNotifierAdapter(
-//        '742482006:AAEHNdvrrA1f1CbHbfJRglrXYdTfGZWbQPM',
-//        '315264334'
-//    );
-//    return $notifier;
-//});
+$container->set('file-logger', function () {
+    $logger = new Logger('name');
+    $logger->pushHandler(new StreamHandler(__DIR__ . '/../resources/logs/main.log'));
+    $notifier = new \Ntschool\Notifier\Adapter\MonologNotifierAdapter($logger);
+    return $notifier;
+});
+
+$container->set('telegram-logger', function () {
+    $notifier = new \Ntschool\Notifier\Adapter\TelegramNotifierAdapter(
+        '742482006:AAEHNdvrrA1f1CbHbfJRglrXYdTfGZWbQPM',
+        '315264334'
+    );
+    return $notifier;
+});
 
 $container->set('notifier', function () use ($container) {
     $notifier = new \Ntschool\Notifier\NotifierObserver();
@@ -155,8 +155,16 @@ $container->set(\NtSchool\Action\ActionAdmin\AdminPostAction::class, function ()
     return new \NtSchool\Action\ActionAdmin\AdminPostAction($renderer);
 });
 
-$container->set(\NtSchool\Action\ActionAdmin\AdminPostsAction::class, function () use ($renderer) {
-    return new \NtSchool\Action\ActionAdmin\AdminPostsAction($renderer);
+//$container->set(\NtSchool\Action\ActionAdmin\AdminPostsAction::class, function () use ($renderer) {
+//    return new \NtSchool\Action\ActionAdmin\AdminPostsAction($renderer);
+//});
+
+$container->set(\NtSchool\Action\User\ListUserAction::class, function () use ($renderer, $container) {
+    return new \NtSchool\Action\User\ListUserAction($renderer, $container->get('validator'));
+});
+
+$container->set(\NtSchool\Action\User\CreateUserAction::class, function () use ($renderer, $container) {
+    return new \NtSchool\Action\User\CreateUserAction($renderer, $container->get('validator'));
 });
 
 $container->set(\NtSchool\Action\ActionAdmin\AdminProductAction::class, function () use ($renderer) {
@@ -179,10 +187,10 @@ $container->set(\NtSchool\Action\ActionAdmin\AdminTablesAction::class, function 
     return new \NtSchool\Action\ActionAdmin\AdminTablesAction($renderer);
 });
 
-$container->set(\NtSchool\Action\ActionAdmin\AdminSigninAction::class, function () use ($renderer) {
-    return new \NtSchool\Action\ActionAdmin\AdminSigninAction($renderer);
+$container->set(\NtSchool\Action\ActionAdmin\AdminSigninAction::class, function () use ($renderer, $container) {
+    return new \NtSchool\Action\ActionAdmin\AdminSigninAction($renderer, $container->get('validator'));
 });
 
-$container->set(\NtSchool\Action\ActionAdmin\AdminSignupAction::class, function () use ($renderer) {
-    return new \NtSchool\Action\ActionAdmin\AdminSignupAction($renderer);
+$container->set(\NtSchool\Action\ActionAdmin\AdminSignupAction::class, function () use ($renderer, $container) {
+    return new \NtSchool\Action\ActionAdmin\AdminSignupAction($renderer, $container->get('validator'));
 });

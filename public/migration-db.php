@@ -27,12 +27,13 @@ require_once '../config/database.php';
 //    $table->timestamps();
 //});
 //
-//Manager::schema()->create('user', function ($table) {
+//Manager::schema()->create('users', function ($table) {
 //    $table->increments('id');
 //    $table->string('email')->unique();
 //    $table->string('password');
 //    $table->tinyInteger('is_active')->default(0);
 //    $table->string('activation_code');
+//    $table->timestamps();
 //});
 
 //Manager::schema()->create('posts', function ($table) {
