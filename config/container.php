@@ -9,6 +9,21 @@ use Monolog\Handler\StreamHandler;
 $builder = new ContainerBuilder();
 $container = $builder->newInstance();
 
+$container->set('validator', function () use ($capsule) {
+    $filesystem = new \Illuminate\Filesystem\Filesystem();
+    $loader = new \Illuminate\Translation\FileLoader($filesystem, dirname(dirname(__FILE__)) . '/resources/lang');
+    $loader->addNamespace('lang', dirname(dirname(__FILE__)) . '/resources/lang');
+    $loader->load($lang = 'ru', $group = 'validation', $namespace = 'lang');
+
+    $factory = new \Illuminate\Translation\Translator($loader, 'ru');
+    $validator = new \Illuminate\Validation\Factory($factory);
+
+    $databasePresenceVerifier = new \Illuminate\Validation\DatabasePresenceVerifier($capsule->getDatabaseManager());
+    $validator->setPresenceVerifier($databasePresenceVerifier);
+
+    return $validator;
+});
+
 $container->set('file-logger', function () {
     $logger = new Logger('name');
     $logger->pushHandler(new StreamHandler(__DIR__ . '/../resources/logs/main.log'));
@@ -140,8 +155,16 @@ $container->set(\NtSchool\Action\ActionAdmin\AdminPostAction::class, function ()
     return new \NtSchool\Action\ActionAdmin\AdminPostAction($renderer);
 });
 
-$container->set(\NtSchool\Action\ActionAdmin\AdminPostsAction::class, function () use ($renderer) {
-    return new \NtSchool\Action\ActionAdmin\AdminPostsAction($renderer);
+//$container->set(\NtSchool\Action\ActionAdmin\AdminPostsAction::class, function () use ($renderer) {
+//    return new \NtSchool\Action\ActionAdmin\AdminPostsAction($renderer);
+//});
+
+$container->set(\NtSchool\Action\User\ListUserAction::class, function () use ($renderer, $container) {
+    return new \NtSchool\Action\User\ListUserAction($renderer, $container->get('validator'));
+});
+
+$container->set(\NtSchool\Action\User\CreateUserAction::class, function () use ($renderer, $container) {
+    return new \NtSchool\Action\User\CreateUserAction($renderer, $container->get('validator'));
 });
 
 $container->set(\NtSchool\Action\ActionAdmin\AdminProductAction::class, function () use ($renderer) {
@@ -164,10 +187,10 @@ $container->set(\NtSchool\Action\ActionAdmin\AdminTablesAction::class, function 
     return new \NtSchool\Action\ActionAdmin\AdminTablesAction($renderer);
 });
 
-$container->set(\NtSchool\Action\ActionAdmin\AdminSigninAction::class, function () use ($renderer) {
-    return new \NtSchool\Action\ActionAdmin\AdminSigninAction($renderer);
+$container->set(\NtSchool\Action\ActionAdmin\AdminSigninAction::class, function () use ($renderer, $container) {
+    return new \NtSchool\Action\ActionAdmin\AdminSigninAction($renderer, $container->get('validator'));
 });
 
-$container->set(\NtSchool\Action\ActionAdmin\AdminSignupAction::class, function () use ($renderer) {
-    return new \NtSchool\Action\ActionAdmin\AdminSignupAction($renderer);
+$container->set(\NtSchool\Action\ActionAdmin\AdminSignupAction::class, function () use ($renderer, $container) {
+    return new \NtSchool\Action\ActionAdmin\AdminSignupAction($renderer, $container->get('validator'));
 });

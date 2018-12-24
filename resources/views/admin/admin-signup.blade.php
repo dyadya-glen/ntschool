@@ -7,7 +7,7 @@
 <!--<![endif]-->
 
 <head>
-    <title>@yield('title')</title>
+    <title>{{  $title }}</title>
     <meta charset="utf-8">
     <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -134,57 +134,103 @@
                             </h4>
                             <hr class="bottommargin_30">
                             <div class="wrap-forms">
-                                <form>
+
+
+
+
+
+
+
+                                <form method="post">
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group has-placeholder">
                                                 <label for="login-name">Your Name</label>
                                                 <i class="grey fa fa-user"></i>
-                                                <input type="text" class="form-control" id="login-name" placeholder="Name">
+                                                <input type="text" name="user_name" class="form-control" id="login-name" placeholder="Name" value="@isset($user_name){{ $user_name }}@endisset">
+                                                {{--Имя--}}
                                             </div>
 
                                         </div>
+                                        @if($messages !== null && $messages->has('user_name'))
+                                            @foreach($messages->get('user_name') as $message)
+
+                                            <p class="divider_20 text-center text-danger">{{ $message }}</p>
+                                            @endforeach
+                                        @endif
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group has-placeholder">
                                                 <label for="login-email">Email address</label>
                                                 <i class="grey fa fa-envelope-o"></i>
-                                                <input type="email" class="form-control" id="login-email" placeholder="Email Address">
+                                                <input type="text" name="email" class="form-control" id="login-email" placeholder="Email Address" value="@isset($email){{ $email }}@endisset">
+                                                {{--Почта--}}
                                             </div>
-
                                         </div>
+                                        @if($messages !== null && $messages->has('email'))
+                                            @foreach($messages->get('email') as $message)
+
+                                                <p class="divider_20 text-center text-danger">{{ $message }}</p>
+                                            @endforeach
+                                        @endif
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group has-placeholder">
                                                 <label for="login-password">Password</label>
                                                 <i class="grey fa fa-pencil-square-o"></i>
-                                                <input type="password" class="form-control" id="login-password" placeholder="Password">
+                                                <input type="password" name="password" class="form-control" id="login-password" placeholder="Password" value="">
+                                                {{--Пароль--}}
                                             </div>
                                         </div>
+                                        @if($messages !== null && $messages->has('password'))
+                                            @foreach($messages->get('password') as $message)
+
+                                                <p class="divider_20 text-center text-danger">{{ $message }}</p>
+                                            @endforeach
+                                        @endif
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group has-placeholder">
                                                 <label for="login-password2">Retype Password</label>
                                                 <i class="grey fa fa-pencil-square-o"></i>
-                                                <input type="password" class="form-control" id="login-password2" placeholder="Retype Password">
+                                                <input type="password" name="password_confirmation" class="form-control" id="login-password2" placeholder="Retype Password" value="">
+                                                {{--Подтверждение пароля--}}
                                             </div>
                                         </div>
+                                        @if($messages !== null && $messages->has('password_confirmation'))
+                                            @foreach($messages->get('password_confirmation') as $message)
+
+                                                <p class="divider_20 text-center text-danger">{{ $message }}</p>
+                                            @endforeach
+                                        @endif
                                     </div>
 
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="checkbox">
-                                                <input type="checkbox" id="remember_me_checkbox">
-                                                <label for="remember_me_checkbox">Rememrber Me
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {{--<div class="row">--}}
+                                        {{--<div class="col-sm-12">--}}
+                                            {{--<div class="checkbox">--}}
+                                                {{--<input type="checkbox" id="remember_me_checkbox">--}}
+                                                {{--<label for="remember_me_checkbox">Rememrber Me--}}
+                                                {{--</label>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                     <button type="submit" class="theme_button block_button color1">Create an account</button>
                                 </form>
+
+
+
+
+
+
+
+
+
+
+
+
                             </div>
 
                         </div>

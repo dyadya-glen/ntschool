@@ -30,10 +30,16 @@ $router->get('admin inbox', '/admin_inbox', \NtSchool\Action\ActionAdmin\AdminIn
 $router->get('admin order', '/admin_order', \NtSchool\Action\ActionAdmin\AdminOrderAction::class);
 $router->get('admin orders', '/admin_orders', \NtSchool\Action\ActionAdmin\AdminOrdersAction::class);
 $router->get('admin post', '/admin_post', \NtSchool\Action\ActionAdmin\AdminPostAction::class);
-$router->get('admin posts', '/admin_posts', \NtSchool\Action\ActionAdmin\AdminPostsAction::class);
+//$router->get('admin posts', '/admin_posts', \NtSchool\Action\ActionAdmin\AdminPostsAction::class);
+$router->get('users list', '/users_list', \NtSchool\Action\User\ListUserAction::class);
+$router->get('users profile', '/user_profile', \NtSchool\Action\User\CreateUserAction::class);
 $router->get('admin product', '/admin_product', \NtSchool\Action\ActionAdmin\AdminProductAction::class);
 $router->get('admin profile', '/admin_profile', \NtSchool\Action\ActionAdmin\AdminProfileAction::class);
 $router->get('admin profile edit', '/admin_profile_edit', \NtSchool\Action\ActionAdmin\AdminProfileEditAction::class);
 $router->get('admin tables', '/admin_tables', \NtSchool\Action\ActionAdmin\AdminTablesAction::class);
-$router->get('admin sign in', '/administrator', \NtSchool\Action\ActionAdmin\AdminSigninAction::class);
-$router->get('admin sign up', '/admin_signup', \NtSchool\Action\ActionAdmin\AdminSignupAction::class);
+
+$router->get('admin get sign in', '/administrator', \NtSchool\Action\ActionAdmin\AdminSigninAction::class);
+$router->post('admin post sign in', '/administrator', \NtSchool\Action\ActionAdmin\AdminSigninAction::class);
+
+$router->get('admin get sign up', '/admin_signup', \NtSchool\Action\ActionAdmin\AdminSignupAction::class);
+$router->post('admin post sign up', '/admin_signup', \NtSchool\Action\ActionAdmin\AdminSignupAction::class);

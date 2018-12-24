@@ -7,7 +7,7 @@
 <!--<![endif]-->
 
 <head>
-    <title>@yield('title')</title>
+    <title>{{  $title }}</title>
     <meta charset="utf-8">
     <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -134,25 +134,44 @@
                             </h4>
                             <hr class="bottommargin_30">
                             <div class="wrap-forms">
-                                <form>
+
+
+
+
+
+
+
+                                <form method="post">
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group has-placeholder">
                                                 <label for="login-email">Email address</label>
                                                 <i class="grey fa fa-envelope-o"></i>
-                                                <input type="email" class="form-control" id="login-email" placeholder="Email Address">
+                                                <input type="text" name="email" class="form-control" id="login-email" placeholder="Email Address" value="@isset($email){{ $email }}@endisset">
                                             </div>
 
                                         </div>
+                                        @if($messages !== null && $messages->has('email'))
+                                            @foreach($messages->get('email') as $message)
+
+                                                <p class="divider_20 text-center text-danger">{{ $message }}</p>
+                                            @endforeach
+                                        @endif
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group has-placeholder">
                                                 <label for="login-password">Password</label>
                                                 <i class="grey fa fa-pencil-square-o"></i>
-                                                <input type="password" class="form-control" id="login-password" placeholder="Password">
+                                                <input type="password" name="password" class="form-control" id="login-password" placeholder="Password">
                                             </div>
                                         </div>
+                                        @if($messages !== null && $messages->has('password'))
+                                            @foreach($messages->get('password') as $message)
+
+                                                <p class="divider_20 text-center text-danger">{{ $message }}</p>
+                                            @endforeach
+                                        @endif
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12">
@@ -165,6 +184,14 @@
                                     </div>
                                     <button type="submit" class="theme_button block_button color1">Log In</button>
                                 </form>
+
+
+
+
+
+
+
+
                             </div>
 
                             <div class="darklinks text-center topmargin_20">

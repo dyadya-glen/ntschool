@@ -211,8 +211,8 @@
                                 </a>
                                 <ul>
                                     <li>
-                                        <a href="admin_profile.html">
-                                            Profile
+                                        <a href="users_list">
+                                            Profiles
                                         </a>
                                     </li>
                                     <li>
@@ -226,12 +226,12 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="admin_signin.html">
+                                        <a href="administrator">
                                             Sign In
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="admin_signup.html">
+                                        <a href="admin_signup">
                                             Sign Up
                                         </a>
                                     </li>
